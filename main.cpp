@@ -9,7 +9,11 @@ class real {
     float number;
   protected:
     realvalue(int realnumber) {
-       
+      
+    } 
+    double getReal(){  
+      
+       return number;
     }
 
 };
@@ -24,6 +28,7 @@ class Surreal:protected Complex {
     float number1,number2,number3;
   protected:
     
+
 };
 
 //------------------------------
