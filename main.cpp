@@ -5,7 +5,26 @@
 //------------------------------
 
 // Write the assignment code here
+class real {
+    float number;
+  protected:
+    realvalue(int realnumber) {
+       
+    }
 
+};
+
+class Complex:protected real {
+   float number1, number2;
+  protected:
+    
+};
+
+class Surreal:protected Complex {
+    float number1,number2,number3;
+  protected:
+    
+};
 
 //------------------------------
 //   DO NOT MODIFY TEST CASES
