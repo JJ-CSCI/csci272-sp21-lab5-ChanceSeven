@@ -4,31 +4,51 @@
 #include "catch.hpp"
 //------------------------------
 
+
 // Write the assignment code here
-class real {
+class Real {
+  protected:
     float number;
-  protected:
-    realvalue(int realnumber) {
-      
+  public:
+    Real(float n) {
+      number=n;
     } 
-    double getReal(){  
-      
-       return number;
+    float GetReal(){  
+         return number;
     }
-
+   Real operator+(float Other){
+    return Real(number+Other);
+  }
 };
 
-class Complex:protected real {
-   float number1, number2;
+class Complex:public Real {
   protected:
-    
+   float number2;
+  public:
+    Complex(float n,float i):Real(n){
+      number2=i;
+    }
+    float GetImaginary(){
+      return number2;
+    }
+    Complex operator+(float Other){
+    return Complex(number+Other,number2+Other);
+    }
 };
 
-class Surreal:protected Complex {
-    float number1,number2,number3;
+class Surreal:public Complex {
   protected:
-    
-
+    float number3;
+  public:
+    Surreal(float n, float i, float c):Complex(n,i){
+      number3=c;
+    }
+    float GetSurreal(){
+      return number3;
+    }
+    Surreal operator+(float Other){
+    return Surreal(number+Other,number2+Other,number3+Other);
+    }
 };
 
 //------------------------------
